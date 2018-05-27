@@ -10,7 +10,8 @@ class Frame : public Drawable , public Transformable{
 public:
 	Frame();
 	~Frame();
-	void Add(Drawable& drawable);
+	void add(Drawable& drawable);
+	void update(unsigned int deltaTime);
 protected:
 	virtual void draw(RenderTarget& target, RenderStates states) const override;
 private:

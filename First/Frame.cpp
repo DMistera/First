@@ -13,9 +13,13 @@ Frame::~Frame() {
 	}
 }
 
-void Frame::Add(Drawable& drawable) {
+void Frame::add(Drawable& drawable) {
 	m_sprites.push_back(&drawable);
 	m_currentImage = &drawable;
+}
+
+void Frame::update(unsigned int deltaTime) {
+
 }
 
 void Frame::draw(RenderTarget& target, RenderStates states) const {

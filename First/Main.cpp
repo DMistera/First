@@ -12,10 +12,13 @@ int main() {
 	Vector2i mousePos = Mouse::getPosition(window);
 	Program program(&mousePos);
 	program.init();
+	int elapedTime = 0;
 	while (window.isOpen()) {
 		Event event;
 		while (window.pollEvent(event)) {
-			program.update(0);
+			program.update(elapedTime);
+
+			clock_t begin = clock();
 			mousePos = Mouse::getPosition(window);
 			if (event.type == Event::Closed) {
 				window.close();
@@ -23,6 +26,8 @@ int main() {
 			window.clear();
 			window.draw(program);
 			window.display();
+			clock_t end = clock();
+			elapedTime = int(end - begin);
 		}
 	}
 	system("PAUSE");

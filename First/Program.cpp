@@ -16,7 +16,7 @@ bool Program::init() {
 }
 
 bool Program::update(int deltaTime) {
-	return false;
+	return true;
 }
 
 void Program::draw(RenderTarget& target, RenderStates states) const {
