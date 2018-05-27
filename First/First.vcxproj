@@ -131,6 +131,8 @@
     <ClCompile Include="Frame.cpp" />
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Map.cpp" />
+    <ClCompile Include="MapObject.cpp" />
     <ClCompile Include="Program.cpp" />
     <ClCompile Include="State.cpp" />
   </ItemGroup>
@@ -139,6 +141,8 @@
     <ClInclude Include="Editor.h" />
     <ClInclude Include="Frame.h" />
     <ClInclude Include="GameObject.h" />
+    <ClInclude Include="Map.h" />
+    <ClInclude Include="MapObject.h" />
     <ClInclude Include="Program.h" />
     <ClInclude Include="State.h" />
   </ItemGroup>

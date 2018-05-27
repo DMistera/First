@@ -17,8 +17,6 @@ public:
 protected:
 	virtual void draw(RenderTarget& target, RenderStates states) const override;
 private:
-	Vector2i* m_mousePos;
 	Editor* m_editor;
-
 };
 

@@ -3,7 +3,7 @@
 
 
 Program::Program(sf::Vector2i* mousePos) {
-	m_editor = new Editor(m_mousePos);
+	m_editor = new Editor(mousePos);
 }
 
 
@@ -16,6 +16,7 @@ bool Program::init() {
 }
 
 bool Program::update(int deltaTime) {
+	m_editor->update(deltaTime);
 	return true;
 }
 
