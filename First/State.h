@@ -1,14 +1,15 @@
 #pragma once
 
 #include "SFML/Graphics.hpp"
+#include "SFML/Graphics/Drawable.hpp"
 
-class State
-{
+using namespace sf;
+
+class State : public Drawable {
 public:
 	State();
 	~State();
 	virtual bool init() = 0;
-	virtual bool update() = 0;
-	virtual bool draw(sf::RenderWindow* window) = 0;
+	virtual bool update(int deltaTime) = 0;
 };
 
