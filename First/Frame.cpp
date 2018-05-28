@@ -8,9 +8,7 @@ Frame::Frame() {
 
 
 Frame::~Frame() {
-	for (Sprite* drawable : m_sprites) {
-		delete drawable;
-	}
+	m_sprites.clear();
 }
 
 void Frame::add(Sprite& sprite) {

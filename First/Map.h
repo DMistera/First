@@ -6,9 +6,11 @@ public:
 	Map();
 	~Map();
 	void addObject(MapObject* mapObject);
+	void remove(MapObject* mapObject);
+	list<MapObject*> getMapObjects();
 protected:
 	virtual void draw(RenderTarget& target, RenderStates states) const override;
 private:
-	vector<MapObject*> m_mapObjects;
+	list<MapObject*> m_mapObjects;
 };
 

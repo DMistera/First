@@ -18,14 +18,29 @@ bool EditorMap::init(Vector2i* mousePos, Map& map) {
 }
 
 bool EditorMap::update(int deltaTime, MapObject* selectedTemplate) {
+
 	//Highlight
 	float x = (float)(m_mousePos->x - m_mousePos->x % m_gridSize);
 	float y = (float)(m_mousePos->y - m_mousePos->y % m_gridSize);
 	m_selectionHighlight.setPosition(Vector2f(x, y));
 
+	//Insert
 	if (Mouse::isButtonPressed(Mouse::Left)) {
 		if (selectedTemplate != nullptr) {
 			m_map->addObject((MapObject*)selectedTemplate->copy());
+		}
+	}
+
+	//Delete
+	if (Mouse::isButtonPressed(Mouse::Right)) {
+		for (MapObject* mapObject : m_map->getMapObjects()) {
+			//Could be better
+			bool x = mapObject->getFrame().getPosition().x <= m_mousePos->x && m_mousePos->x <= mapObject->getFrame().getPosition().x + mapObject->getFrame().getWidth();
+			bool y = mapObject->getFrame().getPosition().y <= m_mousePos->y && m_mousePos->y <= mapObject->getFrame().getPosition().y + mapObject->getFrame().getHeight();
+			if (x && y) {
+				m_map->remove(mapObject);
+				delete mapObject;
+			}
 		}
 	}
 	return true;
