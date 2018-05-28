@@ -8,17 +8,17 @@ Frame::Frame() {
 
 
 Frame::~Frame() {
-	for (Drawable* drawable : m_sprites) {
+	for (Sprite* drawable : m_sprites) {
 		delete drawable;
 	}
 }
 
-void Frame::add(Drawable& drawable, FloatRect bounds) {
-	m_sprites.push_back(&drawable);
-	m_size.x = bounds.width;
-	m_size.y = bounds.height;
+void Frame::add(Sprite& sprite) {
+	m_sprites.push_back(&sprite);
+	m_size.x = sprite.getLocalBounds().width;
+	m_size.y = sprite.getLocalBounds().height;
 	//temp
-	m_currentImage = &drawable;
+	m_currentSprite = &sprite;
 }
 
 void Frame::update(unsigned int deltaTime) {
@@ -46,5 +46,5 @@ bool Frame::contains(Vector2f v)
 
 void Frame::draw(RenderTarget& target, RenderStates states) const {
 	states.transform *= getTransform();
-	target.draw(*m_currentImage, states);
+	target.draw(*m_currentSprite, states);
 }

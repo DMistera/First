@@ -15,11 +15,15 @@ void Block::update(unsigned int deltaTime) {
 	
 }
 
+GameObject* Block::copy() {
+	return new Block(*this);
+}
+
 void Block::initFrame(Frame& frame) {
 	Texture* texture = new Texture();
 	texture->loadFromFile("res/block.png");
 	Sprite* sprite = new Sprite(*texture);
-	m_frame.add(*sprite, sprite->getLocalBounds());
+	m_frame.add(*sprite);
 }
 
 int Block::getBlockWidth()

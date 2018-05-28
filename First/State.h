@@ -9,7 +9,10 @@ class State : public Drawable {
 public:
 	State();
 	~State();
-	virtual bool init() = 0;
-	virtual bool update(int deltaTime) = 0;
+	Vector2f getViewOffset();
+protected:
+	virtual void draw(RenderTarget& target, RenderStates states) const override;
+	View m_view;
+	FloatRect m_windowArea;
 };
 

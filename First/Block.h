@@ -8,6 +8,9 @@ public:
 
 	virtual void update(unsigned int deltaTime) override;
 
+
+	virtual GameObject* copy() override;
+
 protected:
 	void initFrame(Frame& frame) override;
 
