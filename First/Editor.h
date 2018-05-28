@@ -22,12 +22,18 @@ public:
 
 protected:
 	virtual void draw(RenderTarget& target, RenderStates states) const override;
-	Block m_block;
 private:
 	unsigned int m_gridSize;
+	unsigned int m_iconSize;
+	unsigned int m_layoutWidth;
 	Vector2i* m_mousePos;
 	RectangleShape m_selectionHighlight;
+	RectangleShape m_templateLayout;
+	MapObject* m_selectedTemplate;
 	Map map;
-	vector<MapObject> m_templates;
+	vector<MapObject*> m_templates;
+
+	Vector2i getBlock(Vector2i point);
+	MapObject* getTemplateFromCursor();
 };
 

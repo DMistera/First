@@ -9,6 +9,7 @@ public:
 	~GameObject();
 	virtual void init();
 	virtual void update(unsigned int deltaTime) = 0;
+	Frame& getFrame();
 protected:
 	virtual void initFrame(Frame& frame) = 0;
 	Frame m_frame;

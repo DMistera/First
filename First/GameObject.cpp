@@ -13,6 +13,11 @@ void GameObject::init() {
 	initFrame(m_frame);
 }
 
+Frame & GameObject::getFrame()
+{
+	return m_frame;
+}
+
 void GameObject::initFrame(Frame& frame) {
 
 }

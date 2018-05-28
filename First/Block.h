@@ -1,6 +1,7 @@
 #pragma once
-#include "GameObject.h"
-class Block : public GameObject{
+#include "MapObject.h"
+
+class Block : public MapObject{
 public:
 	Block();
 	~Block();
@@ -9,6 +10,12 @@ public:
 
 protected:
 	void initFrame(Frame& frame) override;
+
+
+	// Inherited via MapObject
+	virtual int getBlockWidth() override;
+
+	virtual int getBlockHeigth() override;
 
 };
 
