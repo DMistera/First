@@ -132,6 +132,7 @@
     <ClCompile Include="EditorUI.cpp" />
     <ClCompile Include="Frame.cpp" />
     <ClCompile Include="GameObject.cpp" />
+    <ClCompile Include="KeyboardManager.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Map.cpp" />
     <ClCompile Include="MapObject.cpp" />
@@ -146,6 +147,7 @@
     <ClInclude Include="EditorUI.h" />
     <ClInclude Include="Frame.h" />
     <ClInclude Include="GameObject.h" />
+    <ClInclude Include="KeyboardManager.h" />
     <ClInclude Include="Map.h" />
     <ClInclude Include="MapObject.h" />
     <ClInclude Include="Program.h" />

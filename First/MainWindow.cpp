@@ -19,20 +19,19 @@ void MainWindow::start() {
 	program.init(&mousePos);
 	int elapedTime = 0;
 	while (window.isOpen()) {
+		clock_t begin = clock();
+		program.update(elapedTime);
 		Event event;
-		while (window.pollEvent(event)) {
-			program.update(elapedTime);
-
-			clock_t begin = clock();
-			mousePos = Mouse::getPosition(window);
-			if (event.type == Event::Closed) {
-				window.close();
-			}
-			window.clear();
-			window.draw(program);
-			window.display();
-			clock_t end = clock();
-			elapedTime = int(end - begin);
+		window.pollEvent(event);
+		mousePos = Mouse::getPosition(window);
+		if (event.type == Event::Closed) {
+			window.close();
 		}
+		window.clear();
+		window.draw(program);
+		window.display();
+		clock_t end = clock();
+		elapedTime = int(end - begin);
+
 	}
 }

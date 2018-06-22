@@ -1,4 +1,5 @@
 #include "EditorMap.h"
+#include <iostream>
 
 
 
@@ -19,15 +20,27 @@ bool EditorMap::init(Vector2i* mousePos, Map& map) {
 
 bool EditorMap::update(int deltaTime, MapObject* selectedTemplate) {
 
+	Vector2f mousePos = State::convertFromCursor(*m_mousePos);
+
 	//Highlight
-	float x = (float)(m_mousePos->x - m_mousePos->x % m_gridSize);
-	float y = (float)(m_mousePos->y - m_mousePos->y % m_gridSize);
+	float x = (float)(mousePos.x - (int)mousePos.x % m_gridSize);
+	float y = (float)(mousePos.y - (int)mousePos.y % m_gridSize);
 	m_selectionHighlight.setPosition(Vector2f(x, y));
 
 	//Insert
 	if (Mouse::isButtonPressed(Mouse::Left)) {
 		if (selectedTemplate != nullptr) {
-			m_map->addObject((MapObject*)selectedTemplate->copy());
+			bool add = true;
+			for (MapObject* mapObject : m_map->getMapObjects()) {
+				if (mapObject->getFrame().getPosition() == Vector2f(x, y)) {
+					add = false;
+				}
+			}
+			if (add) {
+				MapObject* o = (MapObject*)selectedTemplate->copy();
+				o->getFrame().setPosition(Vector2f(x, y));
+				m_map->addObject(o);
+			}
 		}
 	}
 
@@ -43,10 +56,21 @@ bool EditorMap::update(int deltaTime, MapObject* selectedTemplate) {
 			}
 		}
 	}
+
+	if (Keyboard::isKeyPressed(Keyboard::D)) {
+		m_view.move(Vector2f(1.0f*(float)deltaTime, 0.0f));
+		cout << "D" << endl;
+	}
+	if (Keyboard::isKeyPressed(Keyboard::A)) {
+		m_view.move(Vector2f(-1.0f*(float)deltaTime, 0.0f));
+		cout << "A" << endl;
+	}
+
 	return true;
 }
 
 void EditorMap::draw(RenderTarget& target, RenderStates states) const {
+	State::draw(target, states);
 	target.draw(*m_map);
 	target.draw(m_selectionHighlight);
 }

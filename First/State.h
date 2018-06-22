@@ -10,6 +10,7 @@ public:
 	State();
 	~State();
 	Vector2f getViewOffset();
+	Vector2f convertFromCursor(Vector2i mousePosition);
 protected:
 	virtual void draw(RenderTarget& target, RenderStates states) const override;
 	View m_view;
