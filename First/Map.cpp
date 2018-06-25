@@ -21,6 +21,11 @@ std::list<MapObject*> Map::getMapObjects() {
 	return m_mapObjects;
 }
 
+void Map::setSong(Song song)
+{
+	m_song = song;
+}
+
 void Map::draw(RenderTarget& target, RenderStates states) const {
 	for (MapObject* mapObject : m_mapObjects) {
 		target.draw(*mapObject);

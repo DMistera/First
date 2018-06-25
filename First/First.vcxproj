@@ -132,11 +132,12 @@
     <ClCompile Include="EditorUI.cpp" />
     <ClCompile Include="Frame.cpp" />
     <ClCompile Include="GameObject.cpp" />
-    <ClCompile Include="KeyboardManager.cpp" />
+    <ClCompile Include="Gameplay.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Map.cpp" />
     <ClCompile Include="MapObject.cpp" />
     <ClCompile Include="Program.cpp" />
+    <ClCompile Include="Song.cpp" />
     <ClCompile Include="State.cpp" />
     <ClCompile Include="MainWindow.cpp" />
   </ItemGroup>
@@ -147,10 +148,11 @@
     <ClInclude Include="EditorUI.h" />
     <ClInclude Include="Frame.h" />
     <ClInclude Include="GameObject.h" />
-    <ClInclude Include="KeyboardManager.h" />
+    <ClInclude Include="Gameplay.h" />
     <ClInclude Include="Map.h" />
     <ClInclude Include="MapObject.h" />
     <ClInclude Include="Program.h" />
+    <ClInclude Include="Song.h" />
     <ClInclude Include="State.h" />
     <ClInclude Include="MainWindow.h" />
   </ItemGroup>
