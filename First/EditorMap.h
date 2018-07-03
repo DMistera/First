@@ -7,7 +7,7 @@ public:
 	~EditorMap();
 	bool init(Vector2i* mousePos, Map& map);
 	bool update(int deltaTime, MapObject* selectedTemplate);
-
+	Map* getMap();
 protected:
 	virtual void draw(RenderTarget& target, RenderStates states) const override;
 	Vector2i getBlock(Vector2i point);

@@ -4,11 +4,13 @@
 #include "SFML/Graphics/RenderStates.hpp"
 #include "EditorUI.h"
 #include "Editor.h"
+#include "Gameplay.h"
 
 using namespace sf;
 
 class Program : public State {
 public:
+	
 	Program();
 	~Program();
 
@@ -19,5 +21,6 @@ protected:
 	virtual void draw(RenderTarget& target, RenderStates states) const override;
 private:
 	Editor m_editor;
+	Gameplay m_gameplay;
 };
 

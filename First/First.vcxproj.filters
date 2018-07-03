@@ -16,9 +16,6 @@
     <Filter Include="Source Files\States">
       <UniqueIdentifier>{a8430abd-388d-4f38-8974-26df896e9df4}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Editor">
-      <UniqueIdentifier>{16adbc7d-c31f-4416-83bf-aed55d5e4a11}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\Objects">
       <UniqueIdentifier>{61757378-1a31-4c5a-952f-5148658789f9}</UniqueIdentifier>
     </Filter>
@@ -27,6 +24,9 @@
     </Filter>
     <Filter Include="Source Files\Map">
       <UniqueIdentifier>{d113501c-271d-4313-8d93-cdf74df70444}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\States\Editor">
+      <UniqueIdentifier>{49802f18-f56f-4f47-99f6-d37aebca0304}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -39,9 +39,6 @@
     <ClCompile Include="State.cpp">
       <Filter>Source Files\States</Filter>
     </ClCompile>
-    <ClCompile Include="Frame.cpp">
-      <Filter>Source Files\Editor</Filter>
-    </ClCompile>
     <ClCompile Include="GameObject.cpp">
       <Filter>Source Files\Objects</Filter>
     </ClCompile>
@@ -50,15 +47,6 @@
     </ClCompile>
     <ClCompile Include="MapObject.cpp">
       <Filter>Source Files\Objects</Filter>
-    </ClCompile>
-    <ClCompile Include="EditorUI.cpp">
-      <Filter>Source Files\States</Filter>
-    </ClCompile>
-    <ClCompile Include="Editor.cpp">
-      <Filter>Source Files\States</Filter>
-    </ClCompile>
-    <ClCompile Include="EditorMap.cpp">
-      <Filter>Source Files\States</Filter>
     </ClCompile>
     <ClCompile Include="MainWindow.cpp">
       <Filter>Source Files</Filter>
@@ -71,6 +59,18 @@
     </ClCompile>
     <ClCompile Include="Song.cpp">
       <Filter>Source Files\Map</Filter>
+    </ClCompile>
+    <ClCompile Include="Editor.cpp">
+      <Filter>Source Files\States\Editor</Filter>
+    </ClCompile>
+    <ClCompile Include="EditorMap.cpp">
+      <Filter>Source Files\States\Editor</Filter>
+    </ClCompile>
+    <ClCompile Include="EditorUI.cpp">
+      <Filter>Source Files\States\Editor</Filter>
+    </ClCompile>
+    <ClCompile Include="Frame.cpp">
+      <Filter>Source Files\Objects</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -19,7 +19,7 @@ void Gameplay::update()
 void Gameplay::init()
 {
 	Song s;
-	s.load("res\MEPHISTO.ogg");
+	s.load("res/MEPHISTO.ogg");
 	m_map.setSong(s);
 
 }

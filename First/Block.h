@@ -10,6 +10,7 @@ public:
 
 
 	virtual GameObject* copy() override;
+	MapObjectType getType() override;
 
 protected:
 	void initFrame(Frame& frame) override;
@@ -19,6 +20,5 @@ protected:
 	virtual int getBlockWidth() override;
 
 	virtual int getBlockHeigth() override;
-
 };
 

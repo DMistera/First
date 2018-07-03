@@ -13,7 +13,8 @@ bool EditorUI::init(Vector2i* mousePos) {
 	m_mousePos = mousePos;
 	m_layoutWidth = 20;
 	m_iconSize = 64;
-	
+
+	m_saveButtonPressed = false;
 
 	m_templateLayout.setSize(Vector2f((float)(m_iconSize + 2*m_layoutWidth), 600.0f));
 	m_templateLayout.setFillColor(Color(255, 255, 255, 128));
@@ -33,17 +34,29 @@ bool EditorUI::init(Vector2i* mousePos) {
 	return true;
 }
 
-bool EditorUI::update(int deltaTime) {
+bool EditorUI::update(int deltaTime, bool& saveCommand) {
 
 	if (Mouse::isButtonPressed(Mouse::Left)) {
 		MapObject* t = getTemplateFromCursor();
-		if (getTemplateFromCursor() != nullptr) {
-			m_selectedTemplate = (MapObject*)getTemplateFromCursor()->copy();
+		if (t != nullptr) {
+			m_selectedTemplate = (MapObject*)t->copy();
 			
 		}
 	}
 	if (m_selectedTemplate != nullptr) {
 		m_selectedTemplate->getFrame().setPosition((Vector2f)*m_mousePos);
+	}
+
+	saveCommand = false;
+	bool f1 = sf::Keyboard::isKeyPressed(Keyboard::Key::F1);
+	if(f1 && !m_saveButtonPressed)
+	{
+		saveCommand = true;
+		m_saveButtonPressed = true;
+	}
+	else if(!f1)
+	{
+		m_saveButtonPressed = false;
 	}
 
 	return true;

@@ -17,7 +17,7 @@ public:
 
 	bool init(Vector2i* mousePos);
 
-	bool update(int deltaTime);
+	bool update(int deltaTime, bool& saveCommand);
 	MapObject* getSelectedTemplate();
 protected:
 	virtual void draw(RenderTarget& target, RenderStates states) const override;
@@ -27,8 +27,9 @@ private:
 	Vector2i* m_mousePos;
 	RectangleShape m_templateLayout;
 	MapObject* m_selectedTemplate;
-	Map map;
 	vector<MapObject*> m_templates;
 	MapObject* getTemplateFromCursor();
+
+	bool m_saveButtonPressed;
 };
 

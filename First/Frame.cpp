@@ -42,6 +42,12 @@ bool Frame::contains(Vector2f v)
 	return true;
 }
 
+void Frame::setFixedSize(Vector2f v)
+{
+	setScale(Vector2f(getScale().x * v.x / getWidth(),getScale().y* v.y / getHeight()));
+}
+
+
 void Frame::draw(RenderTarget& target, RenderStates states) const {
 	states.transform *= getTransform();
 	target.draw(*m_currentSprite, states);

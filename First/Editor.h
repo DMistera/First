@@ -2,6 +2,7 @@
 #include "State.h"
 #include "EditorUI.h"
 #include "EditorMap.h"
+
 class Editor : public State {
 public:
 	Editor();

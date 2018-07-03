@@ -19,9 +19,14 @@ GameObject* Block::copy() {
 	return new Block(*this);
 }
 
+MapObject::MapObjectType Block::getType()
+{
+	return BLOCK;
+}
+
 void Block::initFrame(Frame& frame) {
 	Texture* texture = new Texture();
-	texture->loadFromFile("res/block.png");
+	texture->loadFromFile("block.png");
 	Sprite* sprite = new Sprite(*texture);
 	m_frame.add(*sprite);
 }

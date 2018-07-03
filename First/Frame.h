@@ -16,6 +16,7 @@ public:
 	float getWidth();
 	float getHeight();
 	bool contains(Vector2f v);
+	void setFixedSize(Vector2f v);
 protected:
 	virtual void draw(RenderTarget& target, RenderStates states) const override;
 private:
